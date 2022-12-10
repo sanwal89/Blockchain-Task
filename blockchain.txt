@@ -1,0 +1,921 @@
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity >0.8.13;
+contract student{
+string name;
+uint rollno;
+uint marks;
+string public result;
+function studentinfo(string memory Name,uint _rn,uint _marks) public {
+
+    name = Name;
+    rollno = _rn;
+    marks = _marks;
+    if(marks>=50){
+        result = "pass";
+
+    }
+
+    
+    else 
+    result = "fail";
+
+}
+
+
+
+
+
+
+
+
+
+//SPDX-License-Identifier:MIT
+pragma solidity ^0.8.0;
+
+contract map{
+    mapping(string=>uint) public myMap;
+    uint public price;
+    function info(string memory name,uint launchdate)public{
+    myMap[name]=launchdate;
+if (keccak256(abi.encodePacked(name))==keccak256(abi.encodePacked("honda"))){
+        price=100;
+
+}
+ 
+}
+}
+
+}
+
+
+
+
+
+
+
+
+
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity >=0.7.0 <0.9.0;
+contract studentrecord{
+
+    string[4] name;
+    uint[4] rollno;
+    uint[4] marks;
+    uint i;
+    string[4] public result;
+    function getinfo( string[4]  memory _Name,uint[4] memory _rollno,uint[4]memory _marks) public{
+    for(i=0; i<=3; i++){
+ name[i]=_Name[i];
+ rollno[i]=_rollno[i];
+ marks[i]=_marks[i];
+     if(marks[i]<=5){
+         result[i]="congratulations";
+         }
+    else
+    result[i]="best of luck";
+     }
+ }
+    
+
+}
+
+
+
+
+
+
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity >0.8.13;
+contract Students{
+    struct structure{
+    string name;
+    uint rollno;
+    uint marks;
+    } 
+    structure public student;
+    string public result;
+    function studentInfo(string memory _name, uint _rollno,uint _marks) public{
+        student.name= _name;
+        student.rollno = _rollno;
+        student.marks =_marks;
+          if(_marks>50){
+              result = "pass";
+          }
+          else 
+          result = "fail";
+            
+        }
+    }
+
+
+
+
+
+
+
+
+
+// SPDX-License-Identifier: MIT
+
+pragma solidity >0.8.13;
+
+contract dogbreed{
+    struct dogs{
+        string name;
+        string colours;
+ }
+ uint public price;
+ dogs public breed;
+     function dog(string memory _name,string memory _colours)public{
+         breed.name=_name;
+         breed.colours=_colours;
+     
+     if (keccak256(abi.encodePacked((_name))) == keccak256(abi.encodePacked(("german dog")))){
+
+      price=100000;
+
+ }
+ else if (keccak256(abi.encodePacked((_name))) == keccak256(abi.encodePacked(("bull dog")))){
+
+     price =200000;
+ }
+}
+}
+
+
+
+
+
+
+
+
+
+// SPDX-License-Identifier: MIT
+
+pragma solidity >0.8.13;
+contract palne{
+    struct structure{
+    string name;
+    string colour;
+    
+ }
+ structure[2] public company;
+  uint[2] public price;
+  
+ function planeinfo(string[2] memory Name,string[2] memory Colour)public{
+       for(uint i=0;i<2;i++){
+company[i].name=Name[i];
+company[i].colour=Colour[i];
+
+       if (keccak256(abi.encodePacked(Name[i]))==keccak256(abi.encodePacked("PIA"))){
+
+      price[i]=100000;
+ }
+ else if (keccak256(abi.encodePacked(Name[i])) == keccak256(abi.encodePacked("SHAHEEN AIR"))){
+
+      price[i]=200000;
+
+}
+else 
+ price[i] = 300000;
+ }
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+// SPDX-License-Identifier: MIT
+
+pragma solidity >0.8.13;
+
+contract ArmyInfo{
+    struct army{
+        string name;
+
+
+    }
+    army public Army;
+    uint public child;
+    function getInfo(string memory _name) public{
+        Army.name = _name;
+        if(keccak256(abi.encodePacked(_name))== keccak256(abi.encodePacked("major ali"))){
+            child =2;
+
+        }
+        else if(keccak256(abi.encodePacked(_name))== keccak256(abi.encodePacked("major sanwal"))){
+            child =3;
+        }
+            }
+}
+
+
+
+
+
+
+
+
+
+
+// SPDX-License-Identifier: MIT
+
+pragma solidity >0.8.13;
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+ contract sanwaltoken is ERC20{
+constructor (uint256 initialSupply) ERC20 ("sanwaltoken","ST") {
+    _mint(msg.sender , initialSupply);
+}
+ }
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+// SPDX-License-Identifier: MIT
+
+pragma solidity >0.8.14;
+import "erc20.sol";
+contract Carinfo{
+    sanwaltoken biketoken;
+    constructor (address _biketoken)
+     {
+     biketoken = sanwaltoken(_biketoken);
+     }
+
+     struct cars{
+
+     string name;
+    
+    }
+     cars public Car;
+     uint public price;
+    
+      function carinfo(string memory _name) public{
+         Car.name = _name;
+         if (keccak256(abi.encodePacked(_name)) == keccak256(abi.encodePacked("Honda"))){
+          price=100000;
+          biketoken.transfer(msg.sender , 1000);
+         }
+         //conditon 2 
+         else if (keccak256(abi.encodePacked(_name)) == keccak256(abi.encodePacked("Alto"))){
+          price=10000;
+          biketoken.transfer(msg.sender,500);
+
+        }
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// SPDX-License-Identifier: MIT
+
+pragma solidity >0.8.14;
+import "erc20.sol";
+   contract carinfo{
+       sanwaltoken sourcetoken;
+  constructor (address _sourcetoken){ 
+      sourcetoken=sanwaltoken(_sourcetoken);
+  }
+     struct cars{
+     string name;
+     
+
+     }
+     cars public car;
+     uint public price;
+     uint public model;
+     function carsinfo(string memory _name)public{
+
+         car.name =_name;
+         
+         if (keccak256(abi.encodePacked(_name)) == keccak256(abi.encodePacked("Honda"))){
+            price= 100;
+            model=2020;
+            sourcetoken.transfer(msg.sender,100);
+         }
+          else if (keccak256(abi.encodePacked(_name)) == keccak256(abi.encodePacked("Toyota"))){
+            price= 150;
+            model=2019;
+            sourcetoken.transfer(msg.sender,150);
+          }   
+     }
+   }
+   
+
+
+
+
+
+
+
+
+
+
+
+// SPDX-License-Identifier: MIT
+pragma solidity >0.8.14;
+contract studentinfo{
+    struct student{
+        string name;
+        uint marks;
+        string result;
+        
+    }
+    student[] public Students;
+    
+    function getinfo(string memory _name , uint _marks) public{
+     if(_marks>60){
+         Students.push() = student(_name , _marks , "pass");
+     }    
+     else
+         Students.push() = student(_name , _marks , "Fail");
+         
+    }
+      function checkresult() view public returns (student[] memory _student){
+          return Students;
+      }
+}
+
+
+
+
+
+
+
+
+
+
+//SPDX-License-Identifier:MIT
+pragma solidity^0.8.0;
+
+
+contract clinic{
+    
+    string public _Doctorname=" Dr. Hadiyat";
+    string public _Clinicaddress="jhuggi";
+    string public _Clinicname="Pet Specialization";
+    uint public _ClinicContactnumber03152316437;
+    
+
+struct _PetsEatProducts{
+
+
+string _Dogsfood;
+string _Catfood;
+}
+
+_PetsEatProducts public info;
+uint public price;
+
+
+ function _ProductData(string memory food)public{
+     if(keccak256(abi.encodePacked(food))==keccak256(abi.encodePacked("Taco Dogs food"))){
+        price=10000;
+    }
+    else if (keccak256(abi.encodePacked(food))==keccak256(abi.encodePacked("Meo Cat food"))){
+        price=1500;
+}
+
+ }
+ struct _PetsAccessoceries{
+
+string _Dogsitem;
+string _Catitem;
+}
+
+_PetsAccessoceries public Items;
+uint public _price;
+
+
+ function _ItemsData(string memory Item)public{
+
+
+
+    if(keccak256(abi.encodePacked(Item))==keccak256(abi.encodePacked("Dogs Collars"))){
+        _price=10000;
+    }
+    else if (keccak256(abi.encodePacked(Item))==keccak256(abi.encodePacked("Dogs Lessh"))){
+        _price=9000;
+
+}
+    else if(keccak256(abi.encodePacked(Item))==keccak256(abi.encodePacked("Dogs Powder"))){
+        _price=3000;
+    }
+    else if(keccak256(abi.encodePacked(Item))==keccak256(abi.encodePacked("Cats Collars"))){
+        _price=5000;
+
+    }
+    else if(keccak256(abi.encodePacked(Item))==keccak256(abi.encodePacked("Cats Lessh"))){
+        _price=7000;
+    }
+    else if(keccak256(abi.encodePacked(Item))==keccak256(abi.encodePacked("Catss powder"))){
+        _price=1000;
+    }
+ }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//SPDX-License-Identifier:MIT
+pragma solidity ^0.8.0;
+
+contract Hotel{
+
+    string  public OwnerName = "Sanwal";
+    string public HotelName = "Sanwal hotel";
+    uint public  ContactNo = 306000000000;
+    string public hoteladdress = "canal view ";
+
+    struct Menu{
+        string name;
+
+    }
+    Menu public items;
+    uint public prize;
+
+    function getinfo(string memory _ITEMS)public{
+        items.name =_ITEMS;
+    if(keccak256(abi.encodePacked(_ITEMS))==keccak256(abi.encodePacked("Biryani"))){
+        prize=100;
+    }
+    else if (keccak256(abi.encodePacked(_ITEMS))==keccak256(abi.encodePacked("Daal Chawal"))){
+        prize=150;
+    }
+    }
+    struct Carparking{
+     
+     string Name;
+    
+    }
+    Carparking public place;
+    uint public tprize;
+    function byticket(string memory _TName)public{
+        place.Name= _TName;
+        if (keccak256(abi.encodePacked(_TName))==keccak256(abi.encodePacked("GLI"))){
+        tprize=20;
+    }
+      else if (keccak256(abi.encodePacked(_TName))==keccak256(abi.encodePacked("civic"))){
+        tprize=30;
+
+    }
+     else if (keccak256(abi.encodePacked(_TName))==keccak256(abi.encodePacked("sportage"))){
+        tprize=20;
+}
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/ SPDX-License-Identifier: MIT
+
+pragma solidity >0.8.13;
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+ contract kablitoken is ERC20{
+constructor (uint256 initialSupply) ERC20 ("kablitoken","KT") {
+    _mint(msg.sender , initialSupply);
+}
+ }
+
+
+
+
+
+
+
+
+
+// SPDX-License-Identifier:MIT
+
+pragma solidity >0.8.14;
+
+import "erc201.sol";
+contract Carinfo{
+    kablitoken liontoken;
+    constructor (address _liontoken)
+    {
+        liontoken = kablitoken(_liontoken);
+ }
+    struct cars{
+    string name;
+    string model;
+ 
+    }
+   cars public car;
+   uint public price;
+
+   function carinfo(string memory _name,string memory _model)public{
+       car.name=_name;
+       car.model=_model;
+         if (keccak256(abi.encodePacked(_name)) == keccak256(abi.encodePacked("city"))){
+          
+         if (keccak256(abi.encodePacked(_model)) == keccak256(abi.encodePacked("20"))){
+             price=100000;
+
+         liontoken.transfer(msg.sender,1000);
+         }
+   }
+        else if (keccak256(abi.encodePacked(_name)) == keccak256(abi.encodePacked("cultus"))){
+          
+         if (keccak256(abi.encodePacked(_model)) == keccak256(abi.encodePacked("19"))){
+             price=1000;
+          liontoken.transfer(msg.sender,500);
+   }
+         }
+
+
+    }
+
+
+}
+   
+
+
+
+
+
+
+
+
+// SPDX-License-Identifier:MIT
+
+pragma solidity ^0.8.0;
+contract info{
+    string name;
+    uint age;
+    uint height;
+    string public result;
+    function getzainnumber(string memory _name ,uint _age, uint _height,string memory _result )public{
+        name = _name;
+        age = _age;
+        height =_height;
+        result = _result;
+
+    }
+}
+
+
+
+
+
+
+
+
+// SPDX-License-Identifier:MIT
+
+pragma solidity >0.8.14;
+contract running{
+    function getresults() public pure returns (uint sum,uint product){
+        uint a=5;
+        uint b=10;
+        sum = a+b;
+        product = a*b;
+        
+    }
+}
+
+
+
+
+
+
+
+//SPDX-License-Identifier:MIT
+pragma solidity ^0.8.0;
+
+contract pakteam{
+    string name;
+    string game;
+    uint salary;
+    function setname(string memory myname)public{
+        name =myname;
+    }
+    function setgame(string memory mygame)public{
+        game =mygame;
+    }
+    function setsalary(uint mysalary)public{
+        salary=mysalary;
+    }
+    function getname()public view returns(string memory){
+        return name;
+    }
+    function getgame()public view returns(string memory){
+        return game;
+    }
+    function getsalary()public view returns(uint){
+        return salary;
+    }
+    
+        
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+//SPDX-License-Identifier:MIT
+pragma solidity ^0.8.0;
+
+contract currency{
+    struct structure{
+        string name;
+        string country;
+        
+        
+    }
+    structure public paisa;
+    uint public price;
+    function collectcurrencyinfo(string memory _name,string memory Country)public{
+        
+            paisa.name=_name;
+            paisa.country=Country;
+        if (keccak256(abi.encodePacked(_name))==keccak256(abi.encodePacked("Dollar"))){
+          if (keccak256(abi.encodePacked(Country))==keccak256(abi.encodePacked("USA"))){
+           price=222;
+          }
+        if (keccak256(abi.encodePacked(Country))==keccak256(abi.encodePacked("CANADA"))){
+            price=333;
+        }
+        }
+        else if (keccak256(abi.encodePacked(_name))==keccak256(abi.encodePacked("Riyal"))){
+        if    (keccak256(abi.encodePacked(Country))==keccak256(abi.encodePacked("SaudiaARABIA"))){
+           
+           price=55;
+
+    }
+
+        if    (keccak256(abi.encodePacked(Country))==keccak256(abi.encodePacked("QATAR"))){
+            price=324;
+        }}
+}
+}
+
+
+
+
+
+
+// SPDX-License-Identifier:MIT
+pragma solidity ^0.8.14;
+contract _ownership{
+    string public carName;
+    uint public carPrice;
+    address public owner;
+    address public receiver;
+    function info(string memory name,uint price,address from,address to) public{
+        carName=name;
+        carPrice=price;
+        owner=from;
+        receiver=to;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+// SPDX-License-Identifier:MIT
+pragma solidity ^0.8.0;
+import "erc20.sol";
+contract purchase{
+sanwaltoken token;
+constructor (address _token){
+token=sanwaltoken(_token);
+
+}
+
+struct AC{
+    string name;
+    uint  price;
+    
+}
+     string public owner = "sanwal";
+    string public transfer;
+    string  public newowner;
+
+AC public company;
+
+function getinfo(string memory _name,uint _price)public{
+    company.name= _name;
+    company.price=_price;
+    if (_price >50000){
+     token.transfer(msg.sender , 100);
+     transfer="transfer to new owner";
+          newowner="zainch";
+}
+
+  }
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//SPDX-License-Identifier:MIT
+pragma solidity ^0.8.0;
+
+contract successful{
+       uint public sum;
+       uint public minus;
+       uint public multiply;
+       uint public division;
+       uint public square;
+       
+
+       function Addition(uint a,uint b) public{
+           sum = a+b;
+       }
+       function Minus(uint a,uint b)public{
+          minus = a-b;
+       }
+       function Multiply(uint a,uint b)public{
+           multiply = a*b;
+       }
+       function Division(uint a ,uint b)public{
+           division = a/b;
+       }
+       function Square(uint a)public{
+           square =a*a;
+       }
+       
+       
+}
+
+
+
+       
+
+
+
+
+
+
+
+
+
+//SPDX-License-Identifier:MIT
+pragma solidity ^0.8.0;
+
+contract satisfied{
+    string  public name;
+    string  public password;
+    string login;
+
+    function info(string memory _name,string memory _password)public{
+    name=_name;
+    password=_password;
+ if (keccak256(abi.encodePacked(password))==keccak256(abi.encodePacked("welcome"))){
+        password="welcome";
+
+
+ }
+ else 
+ password="reverse";
+
+}
+   
+ 
+}
+
+
+
+
+
+
+
+
+
+
+// SPDX-License-Identifier:MIT
+pragma solidity ^0.8.14;
+contract _ownership{
+    string  carName;
+    uint  carPrice;
+    string public ownership;
+    address public owner;
+    address public receiver;
+    function _owners(address from,address to)public{
+        owner=from;
+        receiver=to;
+    }
+
+    function info(string memory name,uint  price) public{
+        carName=name;
+        carPrice=price;
+ 
+
+    if (price ==1000){
+    if (keccak256(abi.encodePacked(name)) == keccak256(abi.encodePacked("city"))){
+          
+          ownership="new owner transferred";
+        
+    }
+    }
+    else 
+    ownership="unsucessful transfer";
+}
+}  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
